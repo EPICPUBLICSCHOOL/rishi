@@ -1,0 +1,42 @@
+{
+  "name": "ChatMessage",
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": "string",
+      "description": "The chat message content"
+    },
+    "sender": {
+      "type": "string",
+      "enum": [
+        "user",
+        "assistant"
+      ],
+      "description": "Who sent the message"
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "english",
+        "hindi",
+        "bengali"
+      ],
+      "description": "Language of the conversation"
+    },
+    "session_id": {
+      "type": "string",
+      "description": "Chat session identifier"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the message was sent"
+    }
+  },
+  "required": [
+    "message",
+    "sender",
+    "language"
+  ]
+}
+

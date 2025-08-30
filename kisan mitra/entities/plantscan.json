@@ -1,0 +1,95 @@
+{
+  "name": "PlantScan",
+  "type": "object",
+  "properties": {
+    "image_url": {
+      "type": "string",
+      "description": "URL of the scanned plant image"
+    },
+    "plant_name": {
+      "type": "string",
+      "description": "Identified plant name"
+    },
+    "scientific_name": {
+      "type": "string",
+      "description": "Scientific name of the plant"
+    },
+    "health_status": {
+      "type": "string",
+      "enum": [
+        "healthy",
+        "diseased",
+        "pest_affected",
+        "nutrient_deficient"
+      ],
+      "description": "Overall health condition"
+    },
+    "disease_name": {
+      "type": "string",
+      "description": "Name of identified disease if any"
+    },
+    "symptoms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of observed symptoms"
+    },
+    "causes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Potential causes of the condition"
+    },
+    "treatments": {
+      "type": "object",
+      "properties": {
+        "organic": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "chemical": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "preventive": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "growth_tips": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tips for better growth and yield"
+    },
+    "confidence_score": {
+      "type": "number",
+      "description": "AI confidence in the analysis"
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "english",
+        "hindi",
+        "bengali"
+      ],
+      "default": "english"
+    }
+  },
+  "required": [
+    "image_url",
+    "plant_name",
+    "health_status"
+  ]
+}
+

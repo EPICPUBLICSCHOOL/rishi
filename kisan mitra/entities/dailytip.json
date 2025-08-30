@@ -1,0 +1,61 @@
+{
+  "name": "DailyTip",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Tip title"
+    },
+    "content": {
+      "type": "string",
+      "description": "Tip content"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "disease_prevention",
+        "fertilizer",
+        "watering",
+        "pest_control",
+        "seasonal"
+      ],
+      "description": "Tip category"
+    },
+    "season": {
+      "type": "string",
+      "enum": [
+        "spring",
+        "summer",
+        "monsoon",
+        "winter",
+        "all"
+      ],
+      "description": "Applicable season"
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "english",
+        "hindi",
+        "bengali"
+      ],
+      "description": "Language of the tip"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "default": "medium"
+    }
+  },
+  "required": [
+    "title",
+    "content",
+    "category",
+    "language"
+  ]
+}
+
